@@ -1,0 +1,10 @@
+data BinThree = Val Int
+              | Node BinThree BinThree
+
+countHeight :: BinThree -> Int -> Int
+countHeight (Val a) h = h
+countHeight (Node a b) h = max (countHeight a (h+1)) (countHeight b (h+1))
+
+filterThree :: BinThree -> (a -> b) -> BinThree
+filterThree (Val a) f = Val (f a)
+filterThree (Node a b) f = Node (filterThree a f) (filterThree b f)
