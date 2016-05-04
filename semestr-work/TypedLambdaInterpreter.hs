@@ -1,4 +1,4 @@
-module TypedLambda where
+module TypedLambda where 
 
 data Type = Logic
           | Nat
